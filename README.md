@@ -21,19 +21,23 @@ Checklist is a modern and advanced todo list web application built using React a
 
 To get started with Checklist locally, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/DragFrost/checklist.git`
-2. Navigate to the project directory: `cd checklist`
-3. Install dependencies:
+- Clone this repository:
+ 
+```bash
+    git clone https://github.com/DragFrost/checklist.git
+```
+- Navigate to the project directory: `cd checklist`
+- Install dependencies:
 
 ```bash
     npm install
 ```
-4. Run Checklist:
+- Run Checklist:
 
-   ```bash
+```bash
     npm start
-   ```
-5. Open your browser and navigate to `http://localhost:3000` (for the specified port in your terminal) to view the application.
+```
+- Open your browser and navigate to `http://localhost:3000` (for the specified port in your terminal) to view the application.
 
 ## Contributing
 
