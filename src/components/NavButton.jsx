@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-const NavButton = ({bgColor}) => {
+const NavButton = ({bgColor, func}) => {
     const currentBG = bgColor ? bgColor : "#FFFFFF"; //"#99ff99";
   return (
-    <button style={{backgroundColor: currentBG}} className="h-10 w-10 rounded-3xl text-black flex justify-center items-center mt-1 border-[1px] border-black">
+    <button onClick={func} style={{backgroundColor: currentBG}} className="h-10 w-10 rounded-3xl text-black flex justify-center items-center mt-1 border-[1px] border-black">
       <svg
         height="32px"
         id="Layer_1"
