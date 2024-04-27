@@ -11,7 +11,7 @@ const AddItem = ({ newItem, setNewItem, handleSubmit }) => {
                 ref={inputRef}
                 type="text"
                 id="addItem"
-                placeholder="Add tasks"
+                placeholder="Add task"
                 required
                 value={newItem}
                 onChange={(e) => 

@@ -1,11 +1,13 @@
 import ItemList from "./ItemList";
 
-function Content({ items, handleCheck, handleDelete }) {
+function Content({ items, handleCheck, handleDelete, openEdit, setOpenEdit }) {
   return (
     <>
       {items.length !== 0 ? (
         <ItemList
           items={items}
+          openEdit={openEdit}
+          setOpenEdit={setOpenEdit}
           handleCheck={handleCheck}
           handleDelete={handleDelete}
         />

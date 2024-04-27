@@ -1,9 +1,9 @@
-import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 
 
-const Lineitem = ({ item, handleCheck, handleDelete }) => {
+const Lineitem = ({ item, handleCheck, handleDelete, openEdit, setOpenEdit }) => {
+  
   return (
     <li className="item">
       <input
@@ -15,7 +15,14 @@ const Lineitem = ({ item, handleCheck, handleDelete }) => {
         onDoubleClick={() => handleCheck(item.id)}
         style={(item.checked) ? { textDecoration: 'line-through' } : null}
       >{item.item}</label>
-      <FaEdit />
+      <FaEdit
+        onClick={() => {
+          setOpenEdit(true);
+          JSON.stringify(localStorage.setItem('editid', item.id));
+        }}
+        role="button"
+        tabIndex="0"
+        aria-label={item.item} />
       <FaTrashAlt
         onClick={() => handleDelete(item.id)}
         role="button"
