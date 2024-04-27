@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
-const Cards = ({ taskName, description, bgColor, discColor }) => {
+const Cards = ({ taskName, description, bgColor, discColor, setIsOpen}) => {
   const currentBG = bgColor ? bgColor : "#FFFFFF"; //"#99ff99";
   const currentDiscBG = discColor ? discColor : "#FEF08A"; //"#99ff99";
 
   function handlePopup(){
-    // console.log("popup")
+    setIsOpen("visible")
+    console.log("popup")
   }
   return (
     <div

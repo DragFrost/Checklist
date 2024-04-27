@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import TaskComponent from "./TaskComponent";
 import NavButton from "./NavButton";
 
-const ListSection = () => {
+const ListSection = ({isOpen, setIsOpen}) => {
   function getRandomPastelColor() {
     const hue = Math.floor(Math.random() * 360);
     const saturation = Math.floor(Math.random() * 41) + 30;
@@ -12,15 +13,16 @@ const ListSection = () => {
     return color;
   }
 
-  const [isOpen, setisOpen] = useState("visible");
+//   const [isVisible, setisVisible] = useState("hidden");
   // const visiblity = "block"
 
   function handleClick() {
-    if (isOpen == "visible") {
-      setisOpen("hidden");
-    } else {
-      setisOpen("visible");
-    }
+    // if (isVisible == "visible") {
+    //   setisVisible("hidden");
+    // } else {
+    //   setisVisible("visible");
+    // }
+    setIsOpen("hidden")
 
     console.log("anurag laura");
   }

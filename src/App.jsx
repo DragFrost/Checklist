@@ -1,11 +1,11 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import Cards from './components/Cards'
 import ListSection from './components/ListSection'
 import NavButton from './components/NavButton'
 import Navbar from './components/Navbar'
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const [isOpen, setIsOpen] = useState("hidden")
   function getRandomPastelColor() {
     const hue = Math.floor(Math.random() * 360);
     const saturation = Math.floor(Math.random() * 41) + 30;
@@ -22,8 +22,8 @@ function App() {
         <div className="w-[95.5%] relative">
 
           <div className="h-[85%] p-2 flex">
-            <Cards taskName={"Task1"} description={"Task1 description"} bgColor={getRandomPastelColor()} discColor={getRandomPastelColor()}/>
-            <Cards taskName={"Task2"} description={"Task2 description"} bgColor={getRandomPastelColor()} discColor={getRandomPastelColor()}/>
+            <Cards setIsOpen={setIsOpen} taskName={"Task1"} description={"Task1 description"} bgColor={getRandomPastelColor()} discColor={getRandomPastelColor()}/>
+            <Cards setIsOpen={setIsOpen} taskName={"Task2"} description={"Task2 description"} bgColor={getRandomPastelColor()} discColor={getRandomPastelColor()}/>
           </div>
           <div className='flex justify-between p-8'>
             <h1>
@@ -31,8 +31,8 @@ function App() {
             </h1>
             <NavButton bgColor={"#FF00FF"}/>
           </div>
-          
-          <ListSection />
+
+          <ListSection isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </div>
     </>
