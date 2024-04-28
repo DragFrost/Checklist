@@ -1,13 +1,13 @@
 import Lineitem from "./Lineitem";
 
-const ItemList = ({ items, handleCheck, handleDelete, openEdit, setOpenEdit }) => {
+const ItemList = ({ items, handleCheck, handleDelete, editRef, setOpenEdit }) => {
   return (
     <ul>
       {items.map((item) => (
         <Lineitem
           key={item.id}
           item={item}
-          openEdit={openEdit}
+          editRef={editRef}
           setOpenEdit={setOpenEdit}
           handleCheck={handleCheck}
           handleDelete={handleDelete}

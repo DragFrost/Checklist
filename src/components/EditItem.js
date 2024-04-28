@@ -8,7 +8,6 @@ function EditItem({ edit, setEdit, handleEdit, editRef }) {
         ref={editRef}
         id="edit"
         type="text"
-        role="editbox"
         placeholder="Edit task"
         value={edit}
         onChange={(e) => setEdit(e.target.value)}

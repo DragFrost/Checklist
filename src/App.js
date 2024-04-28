@@ -100,7 +100,7 @@ function App() {
       }
       <Content
         items={items.filter((item) => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
-        openEdit={openEdit}
+        editRef={editRef}
         setOpenEdit={setOpenEdit}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
