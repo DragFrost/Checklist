@@ -4,6 +4,8 @@ import ListSection from './components/ListSection'
 import NavButton from './components/NavButton'
 import Navbar from './components/Navbar'
 
+import plus from "./assets/SVGs/plus1.svg"
+
 function App() {
   const [isOpen, setIsOpen] = useState("hidden")
   function getRandomPastelColor() {
@@ -29,7 +31,7 @@ function App() {
             <h1>
               
             </h1>
-            <NavButton bgColor={"#FF00FF"}/>
+            <NavButton bgColor={"#FF00FF"} svg={plus}/>
           </div>
 
           <ListSection isOpen={isOpen} setIsOpen={setIsOpen} />
