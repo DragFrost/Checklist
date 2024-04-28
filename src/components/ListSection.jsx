@@ -4,7 +4,14 @@ import TaskComponent from "./TaskComponent";
 import NavButton from "./NavButton";
 import cross from "../assets/SVGs/cross.svg";
 
-const ListSection = ({ isOpen, setIsOpen, bgColor, descBGColor }) => {
+const ListSection = ({
+  isOpen,
+  setIsOpen,
+  bgColor,
+  descBGColor,
+  TaskName,
+  Desc,
+}) => {
   function getRandomPastelColor() {
     const hue = Math.floor(Math.random() * 360);
     const saturation = Math.floor(Math.random() * 41) + 30;
@@ -14,15 +21,15 @@ const ListSection = ({ isOpen, setIsOpen, bgColor, descBGColor }) => {
     return color;
   }
   const [isAddWindowOpen, setIsAddWindowOpen] = useState("hidden");
-  const [addButtonDisabled, setaddButtonDisabled] = useState(false)
+  const [addButtonDisabled, setaddButtonDisabled] = useState(false);
 
   function handleAddWindow() {
     if (isAddWindowOpen == "visible") {
       setIsAddWindowOpen("hidden");
-      setaddButtonDisabled(false)
+      setaddButtonDisabled(false);
     } else {
       setIsAddWindowOpen("visible");
-      setaddButtonDisabled(true)
+      setaddButtonDisabled(true);
     }
 
     console.log("anurag laura");
@@ -38,11 +45,17 @@ const ListSection = ({ isOpen, setIsOpen, bgColor, descBGColor }) => {
   return (
     <div className={isOpen}>
       <div className="w-full h-full flex justify-center items-center absolute top-0">
-        <div className="h-[96.5%] w-[70%] bg-green-300 rounded-2xl py-4 px-6  border-black border-[1px]">
-          <div className="text-black text-2xl p-2 mb-2 flex justify-between">
-            Task1
+        <div
+          style={{ backgroundColor: bgColor ? bgColor : "#99ff99" }}
+          className="h-[96.5%] w-[70%] rounded-2xl py-4 px-6  border-black border-[1px]"
+        >
+          <div className="text-black text-2xl p-2 mb-1 flex justify-between items-center">
+            {TaskName ? TaskName : "Task"}
             <NavButton bgColor={"#FF0000"} svg={cross} func={handleClick} />
           </div>
+          <h1 style={{ backgroundColor: descBGColor ? descBGColor : "#99f191" }} className="text-black mb-4 p-2 rounded-lg">
+            {Desc ? Desc : "Task Description"}
+          </h1>
           <div className="flex justify-evenly">
             <input
               type="search"
@@ -79,7 +92,7 @@ const ListSection = ({ isOpen, setIsOpen, bgColor, descBGColor }) => {
                 </button>
                 <button
                   onClick={handleAddWindow}
-                  className=" text-slate-800 p-2 bg-purple-400 border-[1px] w-[60%] h-[45%] border-black rounded-lg flex justify-center items-center"
+                  className=" text-slate-800 p-2 bg-red-500 border-[1px] w-[60%] h-[45%] border-black rounded-lg flex justify-center items-center"
                 >
                   Cancel
                   {/* add svg */}
