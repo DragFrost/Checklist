@@ -24,7 +24,7 @@ const ListSection = ({isOpen, setIsOpen}) => {
     // }
     setIsOpen("hidden")
 
-    console.log("anurag laura");
+    console.log("Dwaipayan laura");
   }
 
   const [searchValue, setSearchValue] = useState("");
@@ -59,15 +59,15 @@ const ListSection = ({isOpen, setIsOpen}) => {
             <h1 className="text-black mb-1">Things to do:</h1>
             <div className="flex flex-col w-full">
               <TaskComponent
-                taskText={"Anurag ka gaand maarna hai"}
+                taskText={"Dwaipayan ka gaand maarna hai"}
                 bgColor={getRandomPastelColor()}
               />
               <TaskComponent
-                taskText={"Anurag ka cheda karna hai"}
+                taskText={"Dwaipayan ka cheda karna hai"}
                 bgColor={getRandomPastelColor()}
               />
               <TaskComponent
-                taskText={"Anurag ka pani nikalna hai"}
+                taskText={"Dwaipayan ka pani nikalna hai"}
                 bgColor={getRandomPastelColor()}
               />
             </div>
