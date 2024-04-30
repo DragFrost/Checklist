@@ -7,7 +7,11 @@ import Navbar from './components/Navbar'
 import plus from "./assets/SVGs/plus1.svg"
 
 function App() {
-  const [isOpen, setIsOpen] = useState("hidden")
+  const [isOpen, setIsOpen] = useState("hidden");
+  const [task, setTask] = useState(() => localStorage.getItem("task") ? JSON.parse(localStorage.getItem("task")) : []);
+  const [taskId, setTaskId] = useState('');
+
+  
   function getRandomPastelColor() {
     const hue = Math.floor(Math.random() * 360);
     const saturation = Math.floor(Math.random() * 41) + 30;
@@ -17,6 +21,28 @@ function App() {
     return color;
   }
 
+
+  const newTaskAdd = () => {
+    let counter;
+    if (!localStorage.getItem('counter')) {
+      counter = 0;
+    }
+    counter = JSON.parse(localStorage.getItem('counter'));
+    counter++;
+    localStorage.setItem('counter', JSON.stringify(counter));
+    const id = counter;
+    const title = `Task ${counter}`;
+    const description = 'Write your description';
+    const color = getRandomPastelColor();
+    const discColor = getRandomPastelColor();
+    const subTask = [];
+    const taskObj = {id, title, description, color, discColor, subTask};
+    const newTask = [...task, taskObj];
+    setTask(newTask);
+    localStorage.setItem("task", JSON.stringify(newTask));
+  }
+
+
   return (
     <>
       <div className='flex'>
@@ -24,17 +50,15 @@ function App() {
         <div className="w-[95.5%] relative">
 
           <div className="h-[85%] p-2 flex">
-            <Cards setIsOpen={setIsOpen} taskName={"Task1"} description={"Task1 description"} bgColor={getRandomPastelColor()} discColor={getRandomPastelColor()}/>
-            <Cards setIsOpen={setIsOpen} taskName={"Task2"} description={"Task2 description"} bgColor={getRandomPastelColor()} discColor={getRandomPastelColor()}/>
+            {task.map((item) =>
+              <Cards key={item.id} setIsOpen={setIsOpen} id={item.id} setTaskId={setTaskId} taskName={item.title} description={item.description} bgColor={item.color} discColor={item.discColor} />
+            )}
           </div>
           <div className='flex justify-between p-8'>
-            <h1>
-              
-            </h1>
-            <NavButton bgColor={"#FF00FF"} svg={plus}/>
+            <NavButton bgColor={"#FF00FF"} svg={plus} func={newTaskAdd} />
           </div>
 
-          <ListSection isOpen={isOpen} setIsOpen={setIsOpen} />
+          <ListSection isOpen={isOpen} setIsOpen={setIsOpen} task={task} taskId={taskId} setTask={setTask} />
         </div>
       </div>
     </>

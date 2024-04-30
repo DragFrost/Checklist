@@ -9,8 +9,8 @@ const ListSection = ({
   setIsOpen,
   bgColor,
   descBGColor,
-  TaskName,
-  Desc,
+  task,
+  taskId
 }) => {
   function getRandomPastelColor() {
     const hue = Math.floor(Math.random() * 360);
@@ -50,11 +50,11 @@ const ListSection = ({
           className="h-[96.5%] w-[70%] rounded-2xl py-4 px-6  border-black border-[1px]"
         >
           <div className="text-black text-2xl p-2 mb-1 flex justify-between items-center">
-            {TaskName ? TaskName : "Task"}
+            {task.map((item) => item.id === taskId ? item.title : '')}
             <NavButton bgColor={"#FF0000"} svg={cross} func={handleClick} />
           </div>
           <h1 style={{ backgroundColor: descBGColor ? descBGColor : "#99f191" }} className="text-black mb-4 p-2 rounded-lg">
-            {Desc ? Desc : "Task Description"}
+            {task.map((item) => item.id === taskId ? item.description : '')}
           </h1>
           <div className="flex justify-evenly">
             <input

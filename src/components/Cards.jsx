@@ -2,13 +2,14 @@
 import edit from "../assets/SVGs/edit1.svg";
 import paint from "../assets/SVGs/paint2.svg";
 
-const Cards = ({ taskName, description, bgColor, discColor, setIsOpen }) => {
+const Cards = ({ id, taskName, description, bgColor, discColor, setIsOpen, setTaskId }) => {
   const currentBG = bgColor ? bgColor : "#FFFFFF"; //"#99ff99";
   const currentDiscBG = discColor ? discColor : "#FEF08A"; //"#99ff99";
 
-  function handlePopup() {
+  function handlePopup(taskId) {
+    setTaskId(taskId);
     setIsOpen("visible");
-    console.log("popup");
+    console.log(taskId);
   }
   return (
     <div
@@ -23,7 +24,7 @@ const Cards = ({ taskName, description, bgColor, discColor, setIsOpen }) => {
             <img src={paint} alt="Logo" />
           </button>
           <button
-            onClick={handlePopup}
+            onClick={() => handlePopup(id)}
             className="bg-green-400 rounded-full w-[40%] flex justify-center items-center mb-1  border-black border-[1px]"
           >
             <img src={edit} alt="Logo" />
