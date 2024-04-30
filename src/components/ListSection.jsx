@@ -10,6 +10,7 @@ const ListSection = ({
   bgColor,
   descBGColor,
   task,
+  setTask,
   taskId
 }) => {
   function getRandomPastelColor() {
@@ -22,6 +23,7 @@ const ListSection = ({
   }
   const [isAddWindowOpen, setIsAddWindowOpen] = useState("hidden");
   const [addButtonDisabled, setaddButtonDisabled] = useState(false);
+  const [addInput, setAddInput] = useState('');
 
   function handleAddWindow() {
     if (isAddWindowOpen == "visible") {
@@ -31,8 +33,26 @@ const ListSection = ({
       setIsAddWindowOpen("visible");
       setaddButtonDisabled(true);
     }
+  }
 
-    console.log("anurag laura");
+  const handleAdd = () => {
+    let counter;
+    if (!localStorage.getItem('counter')) {
+      counter = 0;
+    }
+    counter = JSON.parse(localStorage.getItem('counter'));
+    counter++;
+    localStorage.setItem('subCounter', JSON.stringify(counter));
+    const subId = counter;
+    const subTask = addInput;
+    const subTaskColor = getRandomPastelColor();
+    const newTask = { subId, subTask, subTaskColor }
+    const listItems = task.map((item) => item.id === taskId ? { ...item, subTasks: [...item.subTasks, newTask] } : item);
+    setTask(listItems);
+    setAddInput('');
+    setIsAddWindowOpen("hidden");
+    setaddButtonDisabled(false);
+    localStorage.setItem("task", JSON.stringify(listItems));
   }
 
   function handleClick() {
@@ -84,9 +104,11 @@ const ListSection = ({
               <input
                 type="text"
                 className="w-[80%] rounded-lg bg-orange-200 text-black p-2 border-black border-[1px]"
+                value={addInput}
+                onChange={(e) => setAddInput(e.target.value)}
               />
               <div className="w-[20%] flex flex-col justify-between items-center">
-                <button className=" text-slate-800 p-2 bg-purple-400 border-[1px] w-[60%] h-[45%] border-black rounded-lg flex justify-center items-center">
+                <button className=" text-slate-800 p-2 bg-purple-400 border-[1px] w-[60%] h-[45%] border-black rounded-lg flex justify-center items-center" onClick={handleAdd}>
                   Save
                   {/* add svg */}
                 </button>
@@ -103,18 +125,14 @@ const ListSection = ({
           <div className="mt-6 p-2 flex flex-col justify-center">
             <h1 className="text-black mb-1">Things to do:</h1>
             <div className="flex flex-col w-full">
-              <TaskComponent
-                taskText={"Dwaipayan ka gaand maarna hai"}
-                bgColor={getRandomPastelColor()}
-              />
-              <TaskComponent
-                taskText={"Dwaipayan ka cheda karna hai"}
-                bgColor={getRandomPastelColor()}
-              />
-              <TaskComponent
-                taskText={"Dwaipayan ka pani nikalna hai"}
-                bgColor={getRandomPastelColor()}
-              />
+              {task.map((item) => item.id === taskId && item.subTasks.map((subItem) => (
+                <TaskComponent
+                  key={subItem.subId}
+                  taskText={subItem.subTask}
+                  bgColor={subItem.subTaskColor}
+                />
+              )))}
+
             </div>
           </div>
         </div>

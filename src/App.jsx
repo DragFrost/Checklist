@@ -35,8 +35,8 @@ function App() {
     const description = 'Write your description';
     const color = getRandomPastelColor();
     const discColor = getRandomPastelColor();
-    const subTask = [];
-    const taskObj = {id, title, description, color, discColor, subTask};
+    const subTasks = [];
+    const taskObj = {id, title, description, color, discColor, subTasks};
     const newTask = [...task, taskObj];
     setTask(newTask);
     localStorage.setItem("task", JSON.stringify(newTask));
