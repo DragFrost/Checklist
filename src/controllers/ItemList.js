@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Lineitem from "./Lineitem";
 
 const ItemList = ({ items, handleCheck, handleDelete, editRef, setOpenEdit }) => {

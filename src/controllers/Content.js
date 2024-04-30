@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import ItemList from "./ItemList";
 
 function Content({ items, handleCheck, handleDelete, editRef, setOpenEdit }) {
