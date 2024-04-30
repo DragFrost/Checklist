@@ -17,7 +17,7 @@ function EditItem({ edit, setEdit, handleEdit, editRef }) {
         <BiSolidMessageSquareEdit />
       </button>
     </form>
-  )
+  );
 }
 
-export default EditItem
+export default EditItem;
