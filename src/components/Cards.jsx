@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import deleteLogo from "../assets/SVGs/delete.svg";
 import paint from "../assets/SVGs/paint2.svg";
-// import Card from "./Card";
+import dropdown from "../assets/SVGs/arrow_drop_down.svg";
 
 const Cards = ({
   id,
@@ -20,6 +20,7 @@ const Cards = ({
     setIsOpen("visible");
     console.log(taskId);
   }
+
   return (
     <>
       <div
@@ -28,13 +29,17 @@ const Cards = ({
       >
         <div className="flex justify-between">
           <h1>{taskName ? taskName : "New Task"}</h1>
+          <div className=" bg-red-400 rounded-full py-[1px] px-[9px] mb-[3px] border-black border-[1px] flex justify-center items-center">
+            {Math.floor(Math.random() * 10)}
+          </div>
         </div>
 
         <h1
           style={{ backgroundColor: currentDiscBG }}
-          className="flex justify-center items-center rounded-md p-1 border-black border-[1px]"
+          className="flex justify-between items-center rounded-md p-1 border-black border-[1px] text-wrap flex-wrap"
         >
           {description ? description : "Description"}
+          <img src={dropdown} alt="Logo" />
         </h1>
         <div className="flex items-center mt-1 justify-between">
           <button
@@ -44,10 +49,10 @@ const Cards = ({
             Edit
           </button>
           <div className="flex w-[32.5%] justify-around items-center">
-            <button className="bg-yellow-400 rounded-full w-[40%] flex justify-center items-center mb-1  border-black border-[1px]">
+            <button className="bg-yellow-400 rounded-full w-[40%] flex justify-center items-center border-black border-[1px] p-[2px]">
               <img src={paint} alt="Logo" />
             </button>
-            <button className="bg-red-400 rounded-full w-[40%] flex justify-center items-center mb-1  border-black border-[1px]">
+            <button className="bg-red-500 rounded-full w-[40%] flex justify-center items-center border-black border-[1px] p-[2px]">
               <img src={deleteLogo} alt="Logo" />
             </button>
           </div>
