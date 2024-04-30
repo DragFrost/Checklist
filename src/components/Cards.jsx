@@ -44,10 +44,10 @@ const Cards = ({
             Edit
           </button>
           <div className="flex w-[32.5%] justify-around items-center">
-            <button className="bg-yellow-400 rounded-full w-[40%] flex justify-center items-center mb-1  border-black border-[1px]">
+            <button className="bg-yellow-400 rounded-full w-[40%] flex justify-center items-center border-black border-[1px]">
               <img src={paint} alt="Logo" />
             </button>
-            <button className="bg-red-400 rounded-full w-[40%] flex justify-center items-center mb-1  border-black border-[1px]">
+            <button className="bg-red-400 rounded-full w-[40%] flex justify-center items-center border-black border-[1px]">
               <img src={deleteLogo} alt="Logo" />
             </button>
           </div>
