@@ -1,7 +1,13 @@
 /* eslint-disable react/prop-types */
 import Lineitem from "./Lineitem";
 
-const ItemList = ({ items, handleCheck, handleDelete, editRef, setOpenEdit }) => {
+const ItemList = ({
+  items,
+  handleCheck,
+  handleDelete,
+  editRef,
+  setOpenEdit,
+}) => {
   return (
     <ul>
       {items.map((item) => (
