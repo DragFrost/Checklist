@@ -10,12 +10,10 @@ Checklist is a modern and advanced todo list web application built using React a
 - **Responsive Design:** Works seamlessly across desktop and mobile devices.
 
 ## Technologies Used
-
-- **Frontend:**
   - React: JavaScript library for building user interface.
-
-- **Backend:**
-  - Node.js: JavaScript runtime for building scalable server-side applications.
+    - tailwind css
+  - Bun: JavaScript runtime for building scalable applications.
+    - Vite
 
 ## Getting Started
 
@@ -30,14 +28,14 @@ To get started with Checklist locally, follow these steps:
 - Install dependencies:
 
 ```bash
-    npm install
+    bun install
 ```
 - Run Checklist:
 
 ```bash
-    npm start
+    bun run dev
 ```
-- Open your browser and navigate to `http://localhost:3000` (for the specified port in your terminal) to view the application.
+- Open your browser and navigate to `http://localhost:6969` (for the specified port in your terminal) to view the application.
 
 ## Contributing
 
