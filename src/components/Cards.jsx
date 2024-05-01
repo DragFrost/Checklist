@@ -57,7 +57,7 @@ const Cards = ({
             </button>
             <button 
             onClick={() => handleCardDelete(id)}
-            className="bg-red-400 rounded-full w-[40%] flex justify-center items-center mb-1  border-black border-[1px]">
+            className="bg-red-500 rounded-full w-[40%] flex justify-center items-center border-black border-[1px] p-[2px]">
               <img src={deleteLogo} alt="Logo" />
             </button>
           </div>
