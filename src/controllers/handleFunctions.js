@@ -6,3 +6,5 @@ function getRandomPastelColor() {
 
   return color;
 }
+
+export default getRandomPastelColor;
