@@ -37,10 +37,10 @@ const ListSection = ({
 
   const handleAdd = () => {
     let counter;
-    if (!localStorage.getItem("counter")) {
+    if (!localStorage.getItem("subCounter")) {
       counter = 0;
     }
-    counter = JSON.parse(localStorage.getItem("counter"));
+    counter = JSON.parse(localStorage.getItem("subCounter"));
     counter++;
     localStorage.setItem("subCounter", JSON.stringify(counter));
     const subId = counter;
