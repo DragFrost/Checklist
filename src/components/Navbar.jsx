@@ -8,7 +8,7 @@ import filter from "../assets/SVGs/filter.svg";
 
 const Navbar = ({ addTaskfunc, settingsFunc }) => {
   return (
-    <div className="w-[4.5%] h-screen p-2 flex justify-start fixed">
+    <div className="max-w-[5%] h-screen p-2 flex justify-start fixed">
       <div className="bg-transparent h-full rounded-lg py-4 px-2 flex flex-col justify-between">
         <div className="h-[30%] flex flex-col justify-between">
           <div className="flex">

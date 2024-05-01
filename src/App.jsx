@@ -54,7 +54,7 @@ function App() {
     <>
       <div className="w-screen h-screen relative">
         <Navbar addTaskfunc={addNewTask} settingsFunc={handleSettingsMenu} />
-        <div className=" pl-[4.5%] p-2 flex flex-wrap justify-center">
+        <div className="main max-w-[95%] p-2 flex flex-wrap justify-center ml-[5%]">
           {task.map((item) => (
             <Cards
               key={item.id}
