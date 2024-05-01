@@ -18,7 +18,6 @@ const Cards = ({
   function handlePopup(taskId) {
     setTaskId(taskId);
     setIsOpen("visible");
-    console.log(taskId ? taskId : null);
   }
 
   const handleCardDelete = (id) => {
