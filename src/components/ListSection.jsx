@@ -143,17 +143,26 @@ const ListSection = ({
           <div className="mt-4 p-2 flex flex-col justify-center">
             <h1 className="text-black mb-1">Things to do:</h1>
             <div className="flex flex-col w-full">
-              {task.map(
-                (item) =>
-                  item.id === taskId &&
-                  item.subTasks.map((subItem) => (
-                    <TaskComponent
-                      key={subItem.subId}
-                      taskText={subItem.subTask}
-                      bgColor={subItem.subTaskColor}
-                    />
-                  ))
-              )}
+            {task
+                .filter((item) => item.id === taskId)
+                .map((item) =>
+                  item.subTasks
+                    .filter((subItem) =>
+                      subItem.subTask.toLowerCase().includes(searchValue.toLowerCase())
+                    )
+                    .map((filteredSubItem) => (
+                      <TaskComponent
+                        key={filteredSubItem.subId}
+                        taskText={filteredSubItem.subTask}
+                        bgColor={filteredSubItem.subTaskColor}
+                        task={task}
+                        setTask={setTask}
+                        subId={filteredSubItem.subId}
+                        taskId={taskId}
+                      />
+                    ))
+                )
+              }
             </div>
           </div>
         </div>
