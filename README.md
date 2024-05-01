@@ -39,7 +39,7 @@ To get started with Checklist locally, follow these steps:
 
 ## Contributing
 
-Contributions are welcome! If you have any ideas, bug fixes, or improvements, feel free to open an issue.
+Contributions are welcome! Read [Contributing.md](Contributing.md) for details. If you have any ideas, bug fixes, or improvements, feel free to open an issue. 
 
 ## License
 
