@@ -143,7 +143,7 @@ const ListSection = ({
           <div className="mt-4 p-2 flex flex-col justify-center">
             <h1 className="text-black mb-1">Things to do:</h1>
             <div className="flex flex-col w-full">
-            {task
+              {task
                 .filter((item) => item.id === taskId)
                 .map((item) =>
                   item.subTasks
