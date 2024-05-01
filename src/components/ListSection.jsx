@@ -62,7 +62,7 @@ const ListSection = ({
   function handleClick() {
     setIsOpen("hidden");
 
-    console.log("Dwaipayan laura");
+    console.log("edit window closed!");
   }
 
   const [searchValue, setSearchValue] = useState("");

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Cards from "./components/Cards";
 import ListSection from "./components/ListSection";
 import Navbar from "./components/Navbar";
+import PopupWindow from "./components/PopupWindow";
 
 function App() {
   const [isOpen, setIsOpen] = useState("hidden");
@@ -9,6 +10,16 @@ function App() {
     localStorage.getItem("task") ? JSON.parse(localStorage.getItem("task")) : []
   );
   const [taskId, setTaskId] = useState("");
+  const [settingsWindowOpen, setSettingsWindowOpen] = useState("hidden");
+
+  function handleSettingsMenu() {
+    if (settingsWindowOpen == "visible") {
+      setSettingsWindowOpen("hidden");
+    } else {
+      setSettingsWindowOpen("visible");
+    }
+    console.log(settingsWindowOpen);
+  }
 
   function getRandomPastelColor() {
     const hue = Math.floor(Math.random() * 360);
@@ -42,7 +53,7 @@ function App() {
   return (
     <>
       <div className="w-screen h-screen relative">
-        <Navbar addTaskfunc={addNewTask} />
+        <Navbar addTaskfunc={addNewTask} settingsFunc={handleSettingsMenu} />
         <div className=" pl-[4.5%] p-2 flex flex-wrap justify-center">
           {task.map((item) => (
             <Cards
@@ -57,10 +68,6 @@ function App() {
             />
           ))}
         </div>
-        {/* <div className="flex justify-between p-8">
-            <NavButton bgColor={"#FF00FF"} svg={plus} func={newTaskAdd} />
-          </div> */}
-
         <ListSection
           isOpen={isOpen}
           setIsOpen={setIsOpen}
@@ -68,6 +75,7 @@ function App() {
           taskId={taskId}
           setTask={setTask}
         />
+        <PopupWindow isOpen={settingsWindowOpen} setIsOpen={setSettingsWindowOpen} bgColor={"#FFFF00"} type={"settings"}/>
       </div>
     </>
   );
