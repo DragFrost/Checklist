@@ -40,7 +40,7 @@ const Cards = ({
           <div className=" bg-red-400 rounded-full py-[1px] px-[9px] mb-[3px] border-black border-[1px] flex justify-center items-center">
             {subTaskCount}
           </div>
-        </div>
+        </div> 
 
         <h1
           style={{ backgroundColor: currentDiscBG }}
