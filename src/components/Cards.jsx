@@ -38,7 +38,6 @@ const Cards = ({
         <div className="flex justify-between">
           <h1>{taskName ? taskName : "New Task"}</h1>
           <div className=" bg-red-400 rounded-full py-[1px] px-[9px] mb-[3px] border-black border-[1px] flex justify-center items-center">
-            {/* {Math.floor(Math.random() * 10)} */}
             {subTaskCount}
           </div>
         </div>
