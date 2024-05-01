@@ -21,15 +21,6 @@ function App() {
     console.log(settingsWindowOpen);
   }
 
-  function getRandomPastelColor() {
-    const hue = Math.floor(Math.random() * 360);
-    const saturation = Math.floor(Math.random() * 41) + 30;
-    const lightness = Math.floor(Math.random() * 31) + 60;
-    const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-
-    return color;
-  }
-
   const addNewTask = () => {
     let counter;
     if (!localStorage.getItem("counter")) {
@@ -41,8 +32,8 @@ function App() {
     const id = counter;
     const title = `Task`;
     const description = "Text description";
-    const color = getRandomPastelColor();
-    const discColor = getRandomPastelColor();
+    const color = "#94d6b9"//"#b8e5da"; //getRandomPastelColor();
+    const discColor = "#dad68b" // "#d6c3ea"; // getRandomPastelColor();
     const subTasks = [];
     const taskObj = { id, title, description, color, discColor, subTasks };
     const newTask = [...task, taskObj];
