@@ -22,24 +22,24 @@ To get started with Checklist locally, follow these steps:
 - Clone this repository:
  
 ```bash
-    git clone https://github.com/DragFrost/checklist.git
+  git clone https://github.com/DragFrost/checklist.git
 ```
 - Navigate to the project directory: `cd checklist`
 - Install dependencies:
 
 ```bash
-    bun install
+  bun install
 ```
 - Run Checklist:
 
 ```bash
-    bun run dev
+  bun run dev
 ```
 - Open your browser and navigate to `http://localhost:6969` (for the specified port in your terminal) to view the application.
 
 ## Contributing
 
-Contributions are welcome! Read [Contributing.md](Contributing.md) for details. If you have any ideas, bug fixes, or improvements, feel free to open an issue. 
+Contributions are welcome! Read [Contributing.md](Contributing.md) for more details. If you have any ideas, bug fixes, or improvements, feel free to open an issue. 
 
 ## License
 
