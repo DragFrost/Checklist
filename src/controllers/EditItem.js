@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { BiSolidMessageSquareEdit } from "react-icons/bi";
 
 function EditItem({ edit, setEdit, handleEdit, editRef }) {
@@ -16,7 +17,7 @@ function EditItem({ edit, setEdit, handleEdit, editRef }) {
         <BiSolidMessageSquareEdit />
       </button>
     </form>
-  )
+  );
 }
 
-export default EditItem
+export default EditItem;
