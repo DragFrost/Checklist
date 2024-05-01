@@ -89,7 +89,7 @@ const ListSection = ({
               type="search"
               name="search form"
               id="searchForm"
-              className="bg-yellow-300 p-2 text-black rounded-lg border-[1px] w-[50%] border-black"
+              className="bg-yellow-200 p-2 text-black rounded-lg border-[1px] w-[50%] border-black"
               value={searchValue}
               onChange={(e) => {
                 setSearchValue(e.target.value);
