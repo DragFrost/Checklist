@@ -35,6 +35,7 @@ const ListSection = ({
     }
   }
 
+  
   const handleAdd = () => {
     let counter;
     if (!localStorage.getItem('subCounter')) {

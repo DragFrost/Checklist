@@ -11,6 +11,8 @@ const Cards = ({
   discColor,
   setIsOpen,
   setTaskId,
+  task,
+  setTask
 }) => {
   const currentBG = bgColor ? bgColor : "#FFFFFF"; //"#99ff99";
   const currentDiscBG = discColor ? discColor : "#FEF08A"; //"#99ff99";

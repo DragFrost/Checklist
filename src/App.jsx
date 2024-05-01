@@ -39,7 +39,7 @@ function App() {
     counter++;
     localStorage.setItem("counter", JSON.stringify(counter));
     const id = counter;
-    const title = `Task ${counter}`;
+    const title = `Task`;
     const description = "Text description";
     const color = getRandomPastelColor();
     const discColor = getRandomPastelColor();
@@ -61,10 +61,12 @@ function App() {
               setIsOpen={setIsOpen}
               id={item.id}
               setTaskId={setTaskId}
-              taskName={item.title}
+              taskName={item.title + ' ' + (index + 1)}
               description={item.description}
               bgColor={item.color}
               discColor={item.discColor}
+              task={task}
+              setTask={setTask}
             />
           ))}
         </div>
