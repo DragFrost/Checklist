@@ -71,11 +71,11 @@ const ListSection = ({
     <div className={isOpen}>
       <div className="w-full h-full flex justify-center items-center fixed top-0">
         <div
-          className="h-[96.5%] w-[70%] rounded-2xl py-4 px-6  border-black border-[1px] bg-gray-800"
+          className="h-[96.5%] w-[70%] rounded-2xl py-4 px-6  border-black border-[1px] bg-gray-800 overflow-hidden overflow-y-auto"
         >
-          <div className="text-white text-2xl p-2 mb-1 flex justify-between items-center">
+          <div className="text-white text-2xl p-2 mb-1 flex justify-between items-center font-bold">
             {task.map((item) => (item.id === taskId ? item.title : ""))}
-            <NavButton bgColor={"#FF0000"} svg={cross} func={handleClick} />
+            <NavButton bgColor={"rgb(239 68 68)"} svg={cross} func={handleClick} />
           </div>
           <h1
             style={{ backgroundColor: descBGColor ? descBGColor : "#99f191" }}
@@ -83,12 +83,12 @@ const ListSection = ({
           >
             {task.map((item) => (item.id === taskId ? item.description : ""))}
           </h1>
-          <div className="flex justify-evenly">
+          <div className="flex justify-between">
             <input
               type="search"
               name="search form"
               id="searchForm"
-              className="bg-yellow-300 p-2 text-black rounded-lg border-[1px] w-[50%] border-black"
+              className="bg-gray-600 p-2 text-white placeholder-white rounded-lg border-[2px] w-[50%] border-black"
               value={searchValue}
               onChange={(e) => {
                 setSearchValue(e.target.value);
@@ -98,33 +98,27 @@ const ListSection = ({
             <button
               onClick={handleAddWindow}
               disabled={addButtonDisabled}
-              className="text-black p-2 bg-blue-400 border-[1px] w-[20%] border-black rounded-lg text-center"
+              className="text-white p-2 bg-gradient-to-r from-emerald-700 to-emerald-400 font-semibold border-[2px] w-[25%] border-yellow-200	rounded-lg text-center"
             >
-              add task
+              Add task
             </button>
-            <button className="text-black p-2 bg-pink-400 border-[1px] w-[20%] border-black rounded-lg text-center">
-              something
+            <button className="text-white p-2 bg-gradient-to-r from-teal-700 to-teal-400 font-semibold border-[2px] w-[20%] border-yellow-200 rounded-lg text-center">
+              Something
             </button>
           </div>
           <div className={isAddWindowOpen}>
-            <div className="bg-slate-400 border-black border-[1px] rounded-xl w-[95%] h-[20%] p-2 m-1 ml-6 flex justify-between">
-              {/* <input
-                type="text"
-                className="w-[80%] rounded-lg bg-orange-200 text-black p-2 border-black border-[1px] text-wrap flex flex-wrap"
-                value={addInput}
-                onChange={(e) => setAddInput(e.target.value)}
-              /> */}
+            <div className="bg-black border-black border-[1px] rounded-xl h-[20%] p-2 mt-3 flex justify-between">              
               <textarea
                 rows="4"
                 cols="50"
-                className="w-[80%] rounded-lg bg-orange-200 text-black p-2 border-black border-[1px] text-wrap flex flex-wrap"
+                className="w-[80%] rounded-lg bg-gray-600 text-white p-2 border-black border-[1px] text-wrap flex flex-wrap"
                 value={addInput}
                 onChange={(e) => setAddInput(e.target.value)}
               />
 
               <div className="w-[20%] flex flex-col justify-between items-center">
                 <button
-                  className=" text-slate-800 p-2 bg-purple-400 border-[1px] w-[60%] h-[45%] border-black rounded-lg flex justify-center items-center"
+                  className="text-white font-semibold p-2 bg-gradient-to-r from-cyan-700 to-cyan-400 border-[3px] w-[80%] h-[45%] border-yellow-200 rounded-lg flex justify-center items-center"
                   onClick={handleAdd}
                 >
                   Save
@@ -132,7 +126,7 @@ const ListSection = ({
                 </button>
                 <button
                   onClick={handleAddWindow}
-                  className=" text-slate-800 p-2 bg-red-500 border-[1px] w-[60%] h-[45%] border-black rounded-lg flex justify-center items-center"
+                  className="text-white font-semibold p-2 bg-red-500 border-[3px] w-[80%] h-[45%] border-yellow-200 rounded-lg flex justify-center items-center"
                 >
                   Cancel
                   {/* add svg */}
