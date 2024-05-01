@@ -18,7 +18,7 @@ const Cards = ({
   function handlePopup(taskId) {
     setTaskId(taskId);
     setIsOpen("visible");
-    console.log(taskId);
+    console.log(taskId ? taskId : null);
   }
 
   return (

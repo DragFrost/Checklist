@@ -62,13 +62,13 @@ const ListSection = ({
   function handleClick() {
     setIsOpen("hidden");
 
-    console.log("Dwaipayan laura");
+    console.log("edit window closed!");
   }
 
   const [searchValue, setSearchValue] = useState("");
   return (
     <div className={isOpen}>
-      <div className="w-full h-full flex justify-center items-center absolute top-0">
+      <div className="w-full h-full flex justify-center items-center fixed top-0">
         <div
           style={{ backgroundColor: bgColor ? bgColor : "#99ff99" }}
           className="h-[96.5%] w-[70%] rounded-2xl py-4 px-6  border-black border-[1px]"
