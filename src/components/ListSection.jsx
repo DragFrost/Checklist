@@ -71,10 +71,9 @@ const ListSection = ({
     <div className={isOpen}>
       <div className="w-full h-full flex justify-center items-center fixed top-0">
         <div
-          style={{ backgroundColor: bgColor ? bgColor : "#99ff99" }}
-          className="h-[96.5%] w-[70%] rounded-2xl py-4 px-6  border-black border-[1px]"
+          className="h-[96.5%] w-[70%] rounded-2xl py-4 px-6  border-black border-[1px] bg-gray-800"
         >
-          <div className="text-black text-2xl p-2 mb-1 flex justify-between items-center">
+          <div className="text-white text-2xl p-2 mb-1 flex justify-between items-center">
             {task.map((item) => (item.id === taskId ? item.title : ""))}
             <NavButton bgColor={"#FF0000"} svg={cross} func={handleClick} />
           </div>
@@ -142,7 +141,7 @@ const ListSection = ({
             </div>
           </div>
           <div className="mt-4 p-2 flex flex-col justify-center">
-            <h1 className="text-black mb-1">Things to do:</h1>
+            <h1 className="text-white mb-1">Things to do:</h1>
             <div className="flex flex-col w-full">
               {task
                 .filter((item) => item.id === taskId)

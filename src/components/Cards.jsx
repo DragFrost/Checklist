@@ -36,7 +36,7 @@ const Cards = ({
         className="max-w-56 rounded-xl text-black pt-2 px-2 pb-1 m-1 border-black border-[1px]"
       >
         <div className="flex justify-between">
-          <h1>{taskName ? taskName : "New Task"}</h1>
+          <h1 className="text-white">{taskName ? taskName : "New Task"}</h1>
           <div className=" bg-red-400 rounded-full py-[1px] px-[9px] mb-[3px] border-black border-[1px] flex justify-center items-center">
             {subTaskCount}
           </div>

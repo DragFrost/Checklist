@@ -30,6 +30,7 @@ function App() {
     return color;
   }
 
+
   const addNewTask = () => {
     let counter;
     if (!localStorage.getItem("counter")) {
@@ -41,8 +42,8 @@ function App() {
     const id = counter;
     const title = `Task`;
     const description = "Text description";
-    const color = getRandomPastelColor();
-    const discColor = getRandomPastelColor();
+    const color = '#6d28d9';
+    const discColor = '#cffafe';
     const subTasks = [];
     const taskObj = { id, title, description, color, discColor, subTasks };
     const newTask = [...task, taskObj];
