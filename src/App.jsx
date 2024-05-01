@@ -67,6 +67,7 @@ function App() {
               discColor={item.discColor}
               task={task}
               setTask={setTask}
+              subTaskCount={item.subTasks.length}
             />
           ))}
         </div>
