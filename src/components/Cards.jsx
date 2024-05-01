@@ -21,6 +21,12 @@ const Cards = ({
     console.log(taskId ? taskId : null);
   }
 
+  const handleCardDelete = (id) => {
+    const listItems = task.filter((item) => item.id !== id);
+    setTask(listItems);
+    localStorage.setItem("task", JSON.stringify(listItems));
+  }
+
   return (
     <>
       <div
