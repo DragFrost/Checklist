@@ -18,6 +18,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* .main{
+  
+} */
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
