@@ -24,7 +24,7 @@ const Cards = ({
     const listItems = task.filter((item) => item.id !== id);
     setTask(listItems);
     localStorage.setItem("task", JSON.stringify(listItems));
-  }
+  };
 
   return (
     <>
@@ -58,8 +58,9 @@ const Cards = ({
               <img src={paint} alt="Logo" />
             </button>
             <button
-             onClick={() => handleCardDelete(id)}
-             className="bg-red-500 rounded-full w-[40%] flex justify-center items-center border-black border-[1px] p-[2px]">
+              onClick={() => handleCardDelete(id)}
+              className="bg-red-500 rounded-full w-[40%] flex justify-center items-center border-black border-[1px] p-[2px]"
+            >
               <img src={deleteLogo} alt="Logo" />
             </button>
           </div>
