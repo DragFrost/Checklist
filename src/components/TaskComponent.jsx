@@ -1,6 +1,12 @@
 /* eslint-disable react/prop-types */
-const TaskComponent = ({taskText, bgColor, task, setTask, subId}) => {
-
+const TaskComponent = ({taskText, bgColor, task, setTask, subId, taskId}) => {
+  const handleSubTaskDelete = (id) => {
+    const listItems = task.map((item) => 
+      item.id === taskId ? { ...item, subTasks: item.subTasks.filter((subItem) => subItem.subId !== id) } : item
+    );
+    setTask(listItems);
+    localStorage.setItem("task", JSON.stringify(listItems));
+  }
 
 
   return (
@@ -14,7 +20,7 @@ const TaskComponent = ({taskText, bgColor, task, setTask, subId}) => {
             {/* add svg */}
         </button>
         {/* Error below */}
-        <button className="text-slate-800 p-2 bg-red-400 border-[1px] w-[35%] border-black rounded-lg flex justify-center items-center">
+        <button onClick={() => handleSubTaskDelete(subId)} className="text-slate-800 p-2 bg-red-400 border-[1px] w-[35%] border-black rounded-lg flex justify-center items-center">
             Remove
             {/* add svg */}
         </button>

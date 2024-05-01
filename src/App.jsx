@@ -28,7 +28,7 @@ function App() {
     counter++;
     localStorage.setItem("counter", JSON.stringify(counter));
     const id = counter;
-    const title = `Task ${counter}`;
+    const title = `Task`;
     const description = "Text description";
     const color = getRandomPastelColor();
     const discColor = getRandomPastelColor();
@@ -44,16 +44,18 @@ function App() {
       <div className="w-screen h-screen relative">
         <Navbar addTaskfunc={addNewTask} />
         <div className=" pl-[4.5%] p-2 flex flex-wrap justify-center">
-          {task.map((item) => (
+          {task.map((item, index) => (
             <Cards
               key={item.id}
               setIsOpen={setIsOpen}
               id={item.id}
               setTaskId={setTaskId}
-              taskName={item.title}
+              taskName={item.title + ' ' + (index + 1)}
               description={item.description}
               bgColor={item.color}
               discColor={item.discColor}
+              task={task}
+              setTask={setTask}
             />
           ))}
         </div>

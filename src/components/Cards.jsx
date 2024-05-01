@@ -11,6 +11,8 @@ const Cards = ({
   discColor,
   setIsOpen,
   setTaskId,
+  task,
+  setTask
 }) => {
   const currentBG = bgColor ? bgColor : "#FFFFFF"; //"#99ff99";
   const currentDiscBG = discColor ? discColor : "#FEF08A"; //"#99ff99";
@@ -18,8 +20,14 @@ const Cards = ({
   function handlePopup(taskId) {
     setTaskId(taskId);
     setIsOpen("visible");
-    console.log(taskId);
   }
+
+  const handleCardDelete = (id) => {
+    const listItems = task.filter((item) => item.id !== id);
+    setTask(listItems);
+    localStorage.setItem("task", JSON.stringify(listItems));
+  }
+
   return (
     <>
       <div
@@ -47,7 +55,9 @@ const Cards = ({
             <button className="bg-yellow-400 rounded-full w-[40%] flex justify-center items-center mb-1  border-black border-[1px]">
               <img src={paint} alt="Logo" />
             </button>
-            <button className="bg-red-400 rounded-full w-[40%] flex justify-center items-center mb-1  border-black border-[1px]">
+            <button 
+            onClick={() => handleCardDelete(id)}
+            className="bg-red-400 rounded-full w-[40%] flex justify-center items-center mb-1  border-black border-[1px]">
               <img src={deleteLogo} alt="Logo" />
             </button>
           </div>
